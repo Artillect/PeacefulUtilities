@@ -1,23 +1,27 @@
 package com.artillect.peacefulutilities;
 
+import com.artillect.peacefulutilities.configuration.ConfigurationHandler;
+import com.artillect.peacefulutilities.proxy.IProxy;
+import com.artillect.peacefulutilities.reference.Reference;
+
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = PeacefulUtilities.modId, name = PeacefulUtilities.name, version = PeacefulUtilities.version, acceptedMinecraftVersions = "[1.10]")
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, acceptedMinecraftVersions = "[1.10]")
 public class PeacefulUtilities {
- 
-    public static final String modId = "PeacefulUtilities";
-    public static final String name = "Peaceful Utilities";
-    public static final String version = "1.10.2-0.0.1";
     
-    @Mod.Instance(modId)
+    @Mod.Instance(Reference.MOD_ID)
     public static PeacefulUtilities instance;
+    
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+    public static IProxy proxy;
     
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event){
-    	
+    	ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
     
     @Mod.EventHandler
