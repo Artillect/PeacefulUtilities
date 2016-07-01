@@ -1,0 +1,16 @@
+[
+{
+  "modid": "PeacefulUtilities",
+  "name": "Peaceful Utilities",
+  "description": "A mod that adds several improvements to Minecraft's peaceful mode. Can be used alongside Vazkii's Quantum for the best experience.",
+  "version": "0.0.1",
+  "mcversion": "1.10.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Artillect"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
