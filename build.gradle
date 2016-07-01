@@ -26,7 +26,7 @@ archivesBaseName = "PeacefulUtilities"
 
 minecraft {
     version = "1.10.2-12.18.0.2005-1.10.0"
-    runDir = "run"
+    runDir = "eclipse"
     
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.

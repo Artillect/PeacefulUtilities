@@ -1,5 +1,8 @@
 package com.artillect.peacefulutilities.proxy;
 
-public abstract class CommonProxy implements IProxy{
+import net.minecraft.item.Item;
 
+public abstract class CommonProxy{
+	public void registerItemRenderer(Item item, int meta, String id) {
+	}
 }

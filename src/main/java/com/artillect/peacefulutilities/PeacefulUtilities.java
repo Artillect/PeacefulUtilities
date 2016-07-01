@@ -1,7 +1,7 @@
 package com.artillect.peacefulutilities;
 
-import com.artillect.peacefulutilities.configuration.ConfigurationHandler;
-import com.artillect.peacefulutilities.proxy.IProxy;
+import com.artillect.peacefulutilities.init.ModItems;
+import com.artillect.peacefulutilities.proxy.CommonProxy;
 import com.artillect.peacefulutilities.reference.Reference;
 
 import net.minecraftforge.fml.common.Mod;
@@ -17,11 +17,11 @@ public class PeacefulUtilities {
     public static PeacefulUtilities instance;
     
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
-    public static IProxy proxy;
+    public static CommonProxy proxy;
     
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event){
-    	ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+    	ModItems.init();
     }
     
     @Mod.EventHandler
